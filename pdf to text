@@ -1,1 +1,20 @@
-
+# importing required modules 
+import PyPDF2 
+  
+# creating a pdf file object 
+pdffileobj=open('themas.pdf','rb')
+  
+# creating a pdf reader object 
+pdfReader = PyPDF2.PdffileReader(pdffileObj) 
+  
+# printing number of pages in pdf file 
+print(pdfReader.numPages) 
+  
+# creating a page object 
+pageobj = pdfReader.getPage(0) 
+  
+# extracting text from page 
+print(pageobj.extractText()) 
+  
+# closing the pdf file object 
+pdffileobj.close() 
